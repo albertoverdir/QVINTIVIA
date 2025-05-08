@@ -1,0 +1,331 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background-color: #3D365C;
+  color: #F8B55F;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Estilo cabaret para títulos */
+h1, h2, h3 {
+  font-family: 'Limelight', cursive;
+  text-align: center;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 3.5rem;
+  color: #F8B55F;
+  margin-top: 20px;
+}
+
+.subtitle {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 30px;
+  color: #FFFFFF;
+}
+
+/* Secciones del juego */
+.game-section {
+  background-color: #7C4585;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #F8B55F;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #C95792;
+  border-radius: 5px;
+  background-color: #3D365C;
+  color: white;
+  font-size: 16px;
+}
+
+.answer-input {
+  display: inline-block;
+  width: calc(20% - 8px);
+  margin-right: 8px;
+}
+
+button {
+  background-color: #C95792;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #F8B55F;
+  color: #3D365C;
+  transform: translateY(-2px);
+}
+
+/* Tablero de juego */
+.teams-score {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.team {
+  background-color: #3D365C;
+  padding: 15px;
+  border-radius: 8px;
+  width: 30%;
+  text-align: center;
+}
+
+.current-turn {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.current-turn p {
+  font-size: 1.2rem;
+  color: #F8B55F;
+}
+
+.score {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #F8B55F;
+}
+
+/* Preguntas y respuestas */
+.question-container {
+  margin-bottom: 30px;
+}
+
+#current-question {
+  font-size: 1.8rem;
+  color: #F8B55F;
+  margin-bottom: 20px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.answers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.answer-box {
+  background-color: #3D365C;
+  border: 2px dashed #C95792;
+  border-radius: 8px;
+  padding: 20px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+
+.answer-box::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  color: rgba(200, 200, 200, 0.5);
+}
+
+.answer-box.revealed {
+  background-color: #C95792;
+  border: 2px solid #F8B55F;
+  animation: reveal 0.5s;
+}
+
+@keyframes reveal {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Formulario de respuesta */
+.answer-form {
+  display: flex;
+  margin: 20px 0;
+}
+
+#player-answer {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+/* Errores */
+.fails-container {
+  margin-top: 30px;
+}
+
+.fails {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.fail-box {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #F8B55F;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: transparent;
+}
+
+.fail-box.failed {
+  color: red;
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+/* Sección de robo */
+#steal-section {
+  background-color: #3D365C;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#steal-section p {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  color: #F8B55F;
+}
+
+.footer-image-container {
+  margin: 20px auto;
+  width: 200px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #C95792;
+}
+
+/* Efectos para el estilo cabaret */
+header {
+  background: linear-gradient(to right, #7C4585, #C95792);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Agrega esto al final de tu archivo styles.css */
+.answer-box.revealed {
+  color: #F8B55F !important;
+  font-family: 'Limelight', cursive !important;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  background-color: rgba(61, 54, 92, 0.8);
+  border: 2px solid #F8B55F !important;
+  box-shadow: 0 0 10px rgba(248, 181, 95, 0.5);
+}
+
+.answer-box::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  color: rgba(200, 200, 200, 0.3);
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  text-transform: none;
+}
+
+.answer-box.revealed::before {
+  content: none;
+}
+
+.answer-form.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* imagen en footer */
+.footer-image-container {
+  margin: 20px auto;
+  width: 200px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #C95792;
+  overflow: hidden; /* Esto recortará la imagen si es necesario */
+  padding: 5px; /* Espacio interno opcional */
+}
+
+.footer-logo {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Mantiene las proporciones */
+  display: block; /* Elimina espacio inferior fantasma */
+}

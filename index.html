@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QVINTIVIA - Juego de Preguntas</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fuente estilo cabaret -->
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>QVINTIVIA</h1>
+            <p class="subtitle">El juego de preguntas y respuestas</p>
+        </header>
+
+        <!-- Sección para agregar preguntas -->
+        <section id="setup-game" class="game-section">
+            <h2>Configura el Juego</h2>
+            <div class="form-group">
+                <label for="question">Pregunta:</label>
+                <input type="text" id="question" placeholder="Ingresa tu pregunta">
+            </div>
+            <div class="form-group">
+                <label>Respuestas (5):</label>
+                <input type="text" class="answer-input" placeholder="Respuesta 1">
+                <input type="text" class="answer-input" placeholder="Respuesta 2">
+                <input type="text" class="answer-input" placeholder="Respuesta 3">
+                <input type="text" class="answer-input" placeholder="Respuesta 4">
+                <input type="text" class="answer-input" placeholder="Respuesta 5">
+            </div>
+            <button id="add-question">Agregar Pregunta</button>
+            <button id="start-game">Iniciar Juego</button>
+            <p id="question-count">Preguntas agregadas: 0</p>
+        </section>
+
+        <!-- Sección principal del juego (oculta inicialmente) -->
+        <section id="game-play" class="game-section hidden">
+            <div class="teams-score">
+                <div class="team" id="team-a">
+                    <h3>Equipo A</h3>
+                    <p class="score">0 puntos</p>
+                </div>
+                <div class="current-turn">
+                    <p>Turno de: <span id="current-team">Equipo A</span></p>
+                </div>
+                <div class="team" id="team-b">
+                    <h3>Equipo B</h3>
+                    <p class="score">0 puntos</p>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <h2 id="current-question">Pregunta aparecerá aquí</h2>
+                <div class="answers-grid">
+                    <!-- Las respuestas se insertarán aquí dinámicamente -->
+                </div>
+            </div>
+
+            <div class="answer-form">
+                <input type="text" id="player-answer" placeholder="Tu respuesta...">
+                <button id="submit-answer">Responder</button>
+            </div>
+
+            <div class="fails-container">
+                <h3>Errores:</h3>
+                <div class="fails">
+                    <div class="fail-box" data-team="a"></div>
+                    <div class="fail-box" data-team="a"></div>
+                    <div class="fail-box" data-team="a"></div>
+                </div>
+            </div>
+
+            <div id="steal-section" class="hidden">
+                <p>Perdiste turno, equipo <span id="opponent-team">B</span> puede robar puntos</p>
+                <input type="text" id="steal-answer" placeholder="Respuesta para robar...">
+                <button id="submit-steal">Intentar Robar</button>
+            </div>
+        </section>
+
+        <!-- Sección final del juego (oculta inicialmente) -->
+        <section id="game-end" class="game-section hidden">
+            <h2>¡Juego Terminado!</h2>
+            <p id="final-message">El equipo X gana con Y puntos!</p>
+            <button id="play-again">Jugar de Nuevo</button>
+        </section>
+    </div>
+
+    <!-- Lugar para insertar imagen al final -->
+    <footer>
+        <div class="footer-image-container">
+            <img src="Verdi Tech_Mesa de trabajo 1.png" alt="logotipoVT" class="footer-logo">
+        </div>
+        <p>Desarrollado por Alberto Verdi</p>
+    </footer>
+    <!-- Audio elements (comentados para que sepas dónde insertar los sonidos) -->
+     <!--
+    <audio id="correct-sound" src="sounds/correct.mp3.mp3"></audio>
+    <audio id="wrong-sound" src="sounds/wrong.mp3.mp3"></audio>
+    <audio id="steal-sound" src="sounds/steal.mp3.mp3"></audio> 
+    -->
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
