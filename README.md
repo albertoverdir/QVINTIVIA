@@ -9,7 +9,7 @@ Sigue estos pasos:
 
 En la pantalla inicial, encontrarás un formulario para escribir:
 -Una pregunta.
--5 respuestas posibles, separadas por comas.
+-5 respuestas posibles.
 
 Ejemplo:
 Pregunta: “¿Qué cosas encuentras en una fiesta infantil?” o n ambientes escolares "¿Quienes fueron los precursores de la independencia de México".
@@ -20,8 +20,8 @@ Haz clic en "Agregar pregunta".
 Verás un contador que te dice cuántas preguntas has ingresado.
 Cuando termines de agregar preguntas, haz clic en "Iniciar juego".
 
-<em>Etapa 2: ¡A jugar!</em>
- Cómo se juega:
+<strong>Etapa 2: ¡A jugar!</strong>
+Cómo se juega:
 El juego seleccionará una pregunta al azar con 5 respuestas ocultas.
 Por turnos, Equipo A y Equipo B intentan adivinar las respuestas ocultas.
 
